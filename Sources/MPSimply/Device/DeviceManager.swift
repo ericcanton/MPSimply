@@ -59,6 +59,7 @@ struct DeviceManager {
       return nil
     }
     
+    
     computeEncoder.setBuffer(buf, offset: 0, index: index)
     return buf
   }

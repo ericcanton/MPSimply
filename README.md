@@ -10,7 +10,9 @@ import MPSimply
 let devMgr = DeviceManager()!
 let myArray = [1, 2, 3, 4]
 
-let buf: MTLBuffer = devMgr.intoBuffer(myArray, index: 0)!
+let encoder = devMgr.commandBuffer.makeComputeCommandEncoder()!
+
+let buf: MTLBuffer = devMgr.intoBuffer(myArray, index: 0, computeEncoder: encoder)!
 
 // ... do something cool, eg make MPSNDArray from buf, put it on an MPSGraph tensor...
 ```
